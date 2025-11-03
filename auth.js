@@ -27,7 +27,15 @@ let sess_user_email = "";
 // DOM Signout Element
 const signOut = document.querySelectorAll(".signOut");
 
-const login_link = () => { window.location.replace("/Orthoc/login_signup/login.html") }
+// ---------- Login Link ----------
+const login_link = () => {
+    if (pathname.endsWith("/index.html") || pathname.endsWith("/")) {
+        window.location.replace("./login_signup/login.html");
+        return;
+    }
+    window.location.replace("../login_signup/login.html");
+    return;
+};
 
 //         {getUserSession}
 // ---------- Start ----------

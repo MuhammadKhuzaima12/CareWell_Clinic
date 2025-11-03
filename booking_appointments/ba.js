@@ -86,6 +86,6 @@ sub_btn.addEventListener("click", async (e) => {
 
     add_appointments(patientName, doctorName, doctorDay, doctorTime);
     sweet_alert("Your appointment request has been sent successfully. Thank you!", "success");
-    setTimeout(window.location.replace("../appointments/ap.html"),2000)
+    setTimeout(() => window.location.replace("../appointments/ap.html"), 2000)
 
 });

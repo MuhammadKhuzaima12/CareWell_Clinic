@@ -141,7 +141,8 @@ async function sign_out() {
     localStorage.removeItem("user_name");
     localStorage.removeItem("user_email");
 
-    sweet_alert(`Logout Successful!`, `success`);
+    alert(`Logout Successful!`);
+    // sweet_alert(`Logout Successful!`, `success`);
 
     signOut.forEach(btn => {
         btn.textContent = "Login";

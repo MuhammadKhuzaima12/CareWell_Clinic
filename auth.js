@@ -161,7 +161,9 @@ async function sign_out() {
 
     setTimeout(() => {
         sessionStorage.removeItem("session_checked");
-        window.location.replace("../index.html");
+        if (!(pathname.endsWith("/index.html") || pathname.endsWith("/"))) {
+            window.location.replace("../index.html");
+        }
     }, 1500);
 }
 // ---------- End ----------

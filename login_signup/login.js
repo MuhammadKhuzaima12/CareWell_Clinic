@@ -139,8 +139,8 @@ function on_signin(event) {
     document.getElementById("check_password").value = "";
 
     // Show success and switch to login
-    sweet_alert("Login successful!", "success");
-    change_sign({ currentTarget: { id: "signup_link" } });
+    // sweet_alert("Login successful!", "success");
+    // change_sign({ currentTarget: { id: "signup_link" } });
 }
 
 

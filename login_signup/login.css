@@ -1,52 +1,84 @@
+/* ==============================
+   Login / Signup Page Styles
+   ============================== */
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
+/* Background Gradient - matches hospital theme */
 body {
-    background: linear-gradient(to bottom right, #66ffff, #ffff8b, #3ef3b7);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: #178066;
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
     min-height: 100vh;
-}
-
-.form_section {
-    border: 2px solid mediumaquamarine;
-    height: 86vh;
-    width: 30vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    transition: .3s;
-}
-
-.form_section:hover {
-    box-shadow: 0 0 50px mediumaquamarine;
-}
-
-.formbox {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Form Container */
+.form_section {
+    border: 2px solid #178066;
+    width: 90%;
+    max-width: 420px;
+    min-height: 520px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(23, 128, 102, 0.25);
+    position: relative;
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.form_section:hover {
+    box-shadow: 0 0 45px rgba(23, 128, 102, 0.4);
+}
+
+/* Inner Form */
+.formbox {
+    position: absolute;
     width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .formbox h2 {
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
+    color: #178066;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
 }
 
-.formbox .input_box {
-    width: 300px;
-    height: 50px;
-    border-bottom: 2px solid darkcyan;
-    margin: 30px 0;
+/* Input Boxes */
+.input_box {
     position: relative;
+    width: 100%;
+    border-bottom: 2px solid #178066;
+    margin: 25px 0;
 }
 
 .input_box label {
@@ -56,61 +88,116 @@ body {
     transform: translateY(-50%);
     font-size: 16px;
     font-weight: 500;
-    color: darkcyan;
+    color: #178066;
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
 .input_box input {
     width: 100%;
-    height: 100%;
+    height: 45px;
     background: transparent;
     border: none;
     outline: none;
     font-size: 16px;
-    padding-right: 28px;
-    color: darkcyan;
-}
-
-.input_box .icon {
-    position: absolute;
-    top: 15px;
-    right: 0;
-    font-size: 19px;
+    color: #0a3d62;
+    padding-right: 35px;
 }
 
 .input_box input:focus~label,
 .input_box input:not(:placeholder-shown)~label {
-    transition: 0.5s ease-out;
-    top: -5px;
+    top: -8px;
+    font-size: 13px;
+    color: #0a3d62;
 }
 
-.invalid {
-    font-weight: 900;
+.input_box .icon {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    color: #178066;
+    font-size: 18px;
+    cursor: pointer;
 }
 
+/* Buttons */
 .btn {
     width: 100%;
-    outline: none;
+    background-color: #178066;
+    color: #fff;
+    font-size: 17px;
     border: none;
-    border-radius: 4px;
-    color: darkcyan;
-    background-color: mediumaquamarine;
+    border-radius: 8px;
+    padding: 10px 0;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
 }
 
+.btn:hover {
+    background-color: #fff;
+    color: #178066;
+    border: 2px solid #178066;
+    transform: scale(1.03);
+}
+
+/* Create Account Text */
 .create_acc {
     text-align: center;
-    margin: 25px;
+    margin-top: 25px;
+    font-size: 15px;
+    color: #0a3d62;
 }
 
 .create_acc p a {
-    color: darkcyan;
+    color: #178066;
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.2s ease;
 }
 
 .create_acc p a:hover {
-    color: mediumaquamarine;
+    color: #0a3d62;
 }
 
+/* Hide inactive form */
 .sign_in {
     display: none;
+}
+
+/* Validation highlight */
+.invalid {
+    font-weight: 900;
+    color: #ff4d4d !important;
+    border-bottom-color: #ff4d4d !important;
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .form_section {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .formbox {
+        padding: 25px;
+    }
 }

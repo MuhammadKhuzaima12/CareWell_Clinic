@@ -2,8 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="../images/favicon.png" type="">
+
+    <!--Title-->
+    <title> Orthoc </title>
 
     <!--BootStrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -15,58 +26,252 @@
     <!--BoxIcons-->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-    <!--Tektur GF-->
-
     <!--Animate.CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!--CSS-->
-    <!-- <link rel="stylesheet" href="./ba.css" /> -->
+    <link rel="stylesheet" href="./ba.css" />
 
-    <!--Favicon-->
-    <link rel="shortcut icon" href="./assets/favicon.jpeg" type="image/jpeg" />
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
 
-    <!--Title-->
-    <title>Book an Appointment</title>
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- font awesome style -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="../css/responsive.css" rel="stylesheet" />
+
 </head>
 
-<body>
+<body class="sub_page">
 
-    <!-- Doctor -->
-    <div>
-        <select id="doctors_list" class="btn btn-primary step-select">
-            <option value="select_a_doctor">Select Doctor</option>
-        </select>
-    </div>
-    
-    <!-- Day -->
-    <div class="collapse" id="collapse_days">
-        <select id="avail_days" class="form-select mt-2 step-select">
-            <option value="select_a_day">Select Day</option>
-        </select>
-    </div>
-    
-    <!-- Time -->
-    <div class="collapse mt-2" id="collapse_times">
-        <select id="time_slots" class="form-select mt-2 step-select">
-            <option value="select_a_time">Select Time Slot</option>
-        </select>
-    </div>
-    
-    <!-- Submit -->
-    <div class="collapse mt-3" id="collapse_submit">
-        <button id="submit_btn" class="btn btn-success" >
-            Submit Appointment
-        </button>
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                    <a class="navbar-brand" href="index.html">
+                        <span>
+                            Orthoc
+                        </span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class=""> </span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="../about.html"> About <span class="sr-only">(current)</span> </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../contact.html">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../appointments/ap.html">Appointments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link book_btn" href="#">Book an Appointment <span class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
     </div>
 
+    <!-- Appointment Section -->
+    <section id="appointment" class="appointment section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>MAKE AN APPOINTMENT</h2>
+            <p>
+                Take the first step towards better health - schedule your
+                consultation with trusted medical professionals.
+            </p>
+        </div>
+        <!-- End Section Title -->
     
-    
+        <div class="container">
+            <form class="needs-validation " >
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <input placeholder="Patient Name" type="text" class="form-control" id="patient_name" value=""
+                            required />
+                        <!-- <div class="invalid-feedback">Please enter your name.</div> -->
+                    </div>
+                    <div class="col-md-6 form-group ">
+                        <select id="doctors_list" class="form-select step-select">
+                            <option value="select_a_doctor">Select Doctor</option>
+                        </select>
+                        <!-- <div class="invalid-feedback">Please Select a doctor</div> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <div class="collapse" id="collapse_days">
+                            <select id="avail_days" class="form-select step-select">
+                                <option value="select_a_day">Select Day</option>
+                            </select>
+                        </div>
+                        <!-- <div class="invalid-feedback">Please select day.</div> -->
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <div class="collapse " id="collapse_times">
+                            <select id="time_slots" class="form-select step-select">
+                                <option value="select_a_time">Select Time Slot</option>
+                            </select>
+                        </div>
+                        <!-- <div class="invalid-feedback">Please select a time Slot .</div> -->
+                    </div>
+                </div>
+                    <div class="text-center">
+                        <div class="collapse " id="collapse_submit">
+                            <button id="submit_btn" class="btn btn-success">
+                                Make an Appointment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- /Appointment Section -->
 
 
+
+
+    <!-- footer section -->
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 footer_col">
+                    <div class="footer_contact">
+                        <h4>
+                            Reach at..
+                        </h4>
+                        <div class="contact_link_box">
+                            <a href="">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>
+                                    Location
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    Call +01 1234567890
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                    demo@gmail.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer_social">
+                        <a href="">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mx-auto footer_col">
+                    <div class="footer_link_box">
+                        <h4>
+                            Links
+                        </h4>
+                        <div class="footer_links">
+                            <a class="active" href="index.html">
+                                Home
+                            </a>
+                            <a class="" href="about.html">
+                                About
+                            </a>
+                            <a class="" href="departments.html">
+                                Departments
+                            </a>
+                            <a class="" href="doctors.html">
+                                Doctors
+                            </a>
+                            <a class="" href="contact.html">
+                                Contact Us
+                            </a>
+                            <a class="" href="booking_appointments/ba.html">
+                                Book an appointment
+                            </a>
+                            <a class="" href="appointments/ap.html">
+                                Appointments
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 footer_col">
+                    <div class="footer_detail">
+                        <h4>
+                            About
+                        </h4>
+                        <p>
+                            We are a dedicated healthcare institution committed to providing compassionate, high-quality
+                            medical care for
+                            individuals and families.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-info">
+                <p>
+                    &copy; <span id="displayYear"></span> All Rights Reserved By
+                    <a href="https://html.design/">Muhammad Khuzaima<br><br></a>
+                </p>
+
+            </div>
+        </div>
+    </footer>
+    <!-- footer section -->
     <!--HTML END-->
 
     <!--Scripts-->
+    <!-- jQery -->
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script type="text/javascript" src="../js/custom.js"></script>
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

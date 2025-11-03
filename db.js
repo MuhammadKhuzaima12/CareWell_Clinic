@@ -36,11 +36,11 @@ const doctor_info = async (selected_doc) => {
 }
 // doctor_info()
 
-const add_appointments = async (doctor, day, time) => {
+const add_appointments = async (patient,doctor, day, time) => {
     const { error } = await supabase_api
         .from('appointments')
         .insert({
-            username: `${localStorage.getItem("user_name")}`,
+            patient: `${patient}`,
             user_email: `${localStorage.getItem("user_email")}`,
             doctor: `${doctor}`,
             day: `${day}`,
@@ -71,3 +71,17 @@ const get_appointments = async (doctor, day, time) => {
 }
 // get_appointments()
 
+const del_appointment = async (id) => {
+    const { error } = await supabase_api
+        .from('appointments')
+        .delete()
+        .eq("id",`${id}`);
+
+    if (error) {
+        console.error(error.message);
+        return;
+    }
+    window.location.reload();
+    return;
+}
+// del_appointment()

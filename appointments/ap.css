@@ -1,0 +1,99 @@
+/* ==============================
+   Appointments Page Styles
+   ============================== */
+
+body {
+    background-color: #f6f9fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Appointment Container (Grid Layout) */
+#user_aps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+/* Appointment Card */
+#user_aps ul {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 20px 25px;
+    border-left: 5px solid #007bff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#user_aps ul:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Doctor Name */
+/* #user_aps ul:first-child {
+    font-weight: 600;
+    font-size: 18px;
+    color: #007bff;
+} */
+#user_aps ul>span {
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+    color: #007bff;
+    margin-bottom: 8px;
+}
+
+/* List Items */
+#user_aps li {
+    font-size: 16px;
+    color: #0a3d62;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    list-style-type: none;
+}
+
+/* Delete Button */
+#user_aps button {
+    display: inline-block;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#user_aps button:hover {
+    background-color: #e63939;
+    transform: scale(1.05);
+}
+
+#user_aps button:active {
+    transform: scale(0.97);
+}
+
+/* Responsive (Single Column on Small Screens) */
+@media (max-width: 600px) {
+    #user_aps {
+        grid-template-columns: 1fr;
+        max-width: 90%;
+    }
+
+    #user_aps ul {
+        padding: 15px;
+    }
+
+    #user_aps button {
+        width: 100%;
+        text-align: center;
+    }
+}

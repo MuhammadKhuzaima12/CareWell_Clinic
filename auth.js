@@ -49,7 +49,7 @@ async function get_user_session() {
     } else {
         if (!window.location.pathname.endsWith("/login_signup/login.html")) {
             // Agar woh login page par nahi hai, to use login page par bhej do.
-            window.location.replace("./login_signup/login.html");
+            window.location.replace("../login_signup/login.html");
         }
     }
     return;

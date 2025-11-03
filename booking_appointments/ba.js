@@ -1,4 +1,6 @@
+
 // DOM Elements
+let patientName;
 const doctorSelect = document.getElementById("doctors_list");
 const daySelect = document.getElementById("avail_days");
 const timeSelect = document.getElementById("time_slots");
@@ -74,9 +76,16 @@ document.addEventListener("change", async (event) => {
     }
 });
 
-sub_btn.addEventListener("click", async () => {
-    console.log(doctorName)
-    console.log(doctorDay)
-    console.log(doctorTime)
-    add_appointments(doctorName,doctorDay,doctorTime)
-})
+sub_btn.addEventListener("click", async (e) => {
+    e.preventDefault()
+    patientName = document.getElementById("patient_name").value.trim();
+    console.log(patientName);
+    console.log(doctorName);
+    console.log(doctorDay);
+    console.log(doctorTime);
+
+    add_appointments(patientName, doctorName, doctorDay, doctorTime);
+    sweet_alert("Your appointment request has been sent successfully. Thank you!", "success");
+    setTimeout(window.location.replace("../appointments/ap.html"),2000)
+
+});

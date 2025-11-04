@@ -161,7 +161,7 @@ async function sign_out() {
 
     setTimeout(() => {
         sessionStorage.removeItem("session_checked");
-        if (!(pathname.endsWith("/index.html") || pathname.endsWith("/"))) {
+        if (pathname.endsWith("/index.html") || pathname.endsWith("/")) {
             window.location.replace("./index.html");
             return;
         }
@@ -179,5 +179,3 @@ let initial_func = async (e) => {
 document.addEventListener("DOMContentLoaded", async () => {
     await get_user_session();
 });
-
-console.log(signOut);
